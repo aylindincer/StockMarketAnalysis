@@ -1,8 +1,13 @@
 # StockMarketAnalysis
 An analysis of how certain major events affects the stock market.
 
-Description: Visualize how different major events (Presidency, FDA approval) affect the stock market for all 
-available historical data on the Yahoo! Finance webpage up to the current date.
+Description: This program is used to visualize how different major events affect the stock market. The two topics that can be analyzed using this program are:
+
+1) US Presidents 
+
+2) FDA approval release dates for clinical trials / pharmaceutical companies.
+
+Specifically, the former topic will compare how different presidents affected the stock market during their term and the latter topic will analyze how different FDA release date (approval of drug or approval of clinical trials phase 1, phase 2, etc) can affect the pharmaceutical stock prices.
 
 
 Expected Output:
