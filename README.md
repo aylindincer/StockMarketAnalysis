@@ -1,4 +1,4 @@
-# StockMarketAnalysis
+# Stock Market Analysis
 An analysis of how certain major events affects the stock market.
 
 Description: This program is used to visualize how different major events affect the stock market. The two topics that can be analyzed using this program are:
