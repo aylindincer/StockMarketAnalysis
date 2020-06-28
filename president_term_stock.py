@@ -79,12 +79,14 @@ stkdata.index = [datetime.fromtimestamp(datetime.timestamp(row)).date() for row 
 
 #Create president data frame
 #----------------------------------
-presdates = {'President': ['Bill Clinton','George W. Bush','Barak Obama', 'Donald Trump'],
-        'TermBegan': [datetime.strptime('01/20/1993','%m/%d/%Y').date(),
+presdates = {'President': ['George H. W. Bush', 'Bill Clinton','George W. Bush','Barak Obama', 'Donald Trump'],
+        'TermBegan': [datetime.strptime('01/20/1989','%m/%d/%Y').date(),
+                      datetime.strptime('01/20/1993','%m/%d/%Y').date(),
                       datetime.strptime('01/20/2001','%m/%d/%Y').date(),
                       datetime.strptime('01/20/2009','%m/%d/%Y').date(),
                       datetime.strptime('01/20/2017','%m/%d/%Y').date()],
-         'TermEnd': [datetime.strptime('01/20/2001','%m/%d/%Y').date(),
+         'TermEnd': [datetime.strptime('01/20/1993','%m/%d/%Y').date(),
+                     datetime.strptime('01/20/2001','%m/%d/%Y').date(),
                       datetime.strptime('01/20/2009','%m/%d/%Y').date(),
                       datetime.strptime('01/20/2017','%m/%d/%Y').date(),
                       date.today(),]
