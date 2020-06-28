@@ -1,69 +1,48 @@
-# Stock Market Analysis
-An analysis of how certain major events affects the stock market.
+# Stock Market and President Term Analysis
+## Overview
 
-Description: This program is used to visualize how different major events affect the stock market. The two topics that can be analyzed using this program are:
+The president_term_stock.py script will analyze the stock market within each of the president's term starting from 1985. 
 
-1) US Presidents 
+Two plotly plots are generated: 
+1. Stock market index versus time OHLC plot
+2. Stock market percent change since inauguration for each president.
 
-2) FDA approval release dates for clinical trials / pharmaceutical companies.
+Note: These plots are saved locally as an .html file type and are interactive.
 
-Specifically, the former topic will compare how different presidents affected the stock market during their term and the latter topic will analyze how different FDA release date (approval of drug or approval of clinical trials phase 1, phase 2, etc) can affect the pharmaceutical stock prices.
+The scripts perform the following steps:
+- Pulls stock data from https://finance.yahoo.com
+- Generates a president data frame
+- Combines the stock data for each presidency term
+- Setup the plots using plotly.offline
 
+## To Use:
+1. Download and install:
+- python 3 (https://www.python.org/)
+- pandas package (https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html)
+- yfinance package (https://pypi.org/project/yfinance/)
+- plotly package (https://plotly.com/python/getting-started/#installation)
 
-Expected Output:
-1) OHLC (open high low close) chart (vertical line = price range, Left tick = opening price, Right tick = closing price)
+2. Download from this repository:
+ - president_term_stock.py
 
-2) Stock Price Percent Change
+3. Open the terminal and run the president_term_stock.py script.
+```
+python ./president_term_stock.py /absolute_path/to/output_directory
+```
+Note:  output directory should exist before running script.
 
-**Please make sure necessary packages below are installed**
+4. Input a stock market index (options: '^DJI', '^IXIC', '^GSPC', '^RUT')
 
-Package Dependencies:
-1) pandas_datareader (can install using 'conda')
-2) fix_yahoo_finance (https://pypi.org/project/fix-yahoo-finance/#description)
-    Install using pip install fix-yahoo-finance  (not available on conda)
-3) datetime (can install using 'conda')
-4) requests (can install using 'conda')
-5) re (can install using 'conda')
-6) pandas (can install using 'conda')
-7) beautifulsoup4 (can install using 'conda')
-8) plotly (can install using 'conda')
-*******************************************************************
+## Script Output Description
 
-**Instructions**:
+The output directory will contain the following: 
+1.	OHLC_stock_presidents.html
+2.	percent_change_presidents.html
 
+**OHLC_stock_presidents.html**
+: An OHLC chart displaying the open, high, low, and closing prices for each time point. A black vertical line is placed at the beginning of each president term.
 
-Step 1: Choose a topic to analyze.
+**percent_change_presidents.html**
+: A plot of the percent change relative to the stock price from the inaugration date for each president.
 
-Topics: Presidency or FDA
-
-1) Presidency: Output will be two plotly graphs.  
-        One will be an OHLC (open high low chart) of the stock market index over time
-        with the president inauguration dates presented as vertical lines on the chart.
-        The other will be a line plot of percent change of the stock market index relative
-        to the index from the inauguration date.
-2) FDA: Output will be two plotly graphs.
-        One will be an OHLC of the pharmaceutical stock price over time
-        with the FDA release dates for that specific company presented as vertical lines 
-        on the chart.
-        The other will be a line plot of percent change of that specific stock price 
-        relative to the price from the FDA release date.
-        
-Step 2: Choose the stock (dependent on the topic you selected previously).
-
-1) For the Presidency topic, you must choose one:
-        ^DJI, ^IXIC, ^GSPC,^RUT
-        Warning: Input must include '^' character as shown above.
-    
-2) For the FDA topic, you must choose one:
-         ZGNX,ARDM,SPPI,PRTK,GTXI,HEB,FCSC,ACOR,ALKS,MNKD,HRTX,CTIC,ARLZ,JAZZ,VVUS,
-         DEPO,PLX,DRRX,PTIE,SGEN,PCRX,ALIM,INCY,ATRS,INSY,CRIS,CORT,EBS,RGEN,ARNA,AMRN,
-         HALO,NAVB,SUPN,EXEL,IMGN,DVAX,TTNP,ENDP,AVDL
-         
-**Notes**:
-1) The stock market data start and end dates are hardcoded as 1985-01-29 and the current date. 
-Start Date was chosen since that is the earliest data available for all stocks on 
-Yahoo! Finance. If there is only stock data up to 2010, it will only include that 
-much data. 
-
-2) The fix_yahoo_finance is extremely finicky, meaning it may take a few tries 
-to pull data from webpage.
+Both plots are interactive.  You are able to, zoom, select, hover over plot for specific values, or download plots as a png.
