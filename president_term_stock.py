@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Title: President term and stock market analysisß
-@author: Aylin Dincer
-"""
-# Import packages
+
+#----------------------------
+#Title: president_term_stock.py
+#Author: Aylin Dincer
+#Script Version: 1.0
+#Version Date: November 20, 2018s
+#----------------------------
+
+# Import python packages
 #----------------------------------
 from datetime import datetime, timedelta, date
 from pandas_datareader import data as pdr
@@ -42,7 +45,8 @@ enddate = datetime.today().strftime('%Y-%m-%d')
 #Setup working directory
 #----------------------------------
 workdir = input('Output directory path (absolute):')
-os.chdir(workdir)
+while not os.path.exists(workdir):
+    raise FileNotFoundError('Unable to locate output directory path.')
 #----------------------------------
 
 # Setup stock data
@@ -72,9 +76,6 @@ while (stkdata is None) and (count <= 10):
 # Format Dates to datetime    
 stkdata.index = [datetime.fromtimestamp(datetime.timestamp(row)).date() for row in stkdata.index]
 #----------------------------------
-
-
-
 
 #Create president data frame
 #----------------------------------
