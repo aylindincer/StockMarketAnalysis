@@ -3,8 +3,9 @@
 #----------------------------
 #Title: president_term_stock.py
 #Author: Aylin Dincer
-#Script Version: 1.0
-#Version Date: November 20, 2018s
+#Date Created: November 20, 2018
+#Script Version: 2.0
+#Last Updated: June 28, 2020
 #----------------------------
 
 # Import python packages
@@ -12,12 +13,28 @@
 from datetime import datetime, timedelta, date
 from pandas_datareader import data as pdr
 import pandas as pd
-import os
+import os, argparse, plotly.offline
 import yfinance as yf
-import plotly.offline
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 #----------------------------------
+
+# Define agruments
+#----------------------------
+parser = argparse.ArgumentParser(
+    description = '''TThe president_term_stock.py script will analyze
+    the stock market within each of the president's term starting from 1985.  
+    Example usage: python ./president_term_stock.py abs_path/to/outputdir''')
+    
+parser.add_argument('outputdir',  
+                    help = '''Absolute path to output directory.  
+                    This is where all the output files will be saved.''')
+
+args=parser.parse_args()
+
+outputdir = args.outputdir
+#----------------------------
+
 
 # Date Functions
 #----------------------------------
@@ -44,9 +61,10 @@ enddate = datetime.today().strftime('%Y-%m-%d')
 
 #Setup working directory
 #----------------------------------
-workdir = input('Output directory path (absolute):')
-while not os.path.exists(workdir):
+while not os.path.exists(outputdir):
     raise FileNotFoundError('Unable to locate output directory path.')
+else:
+    os.chdir(outputdir)
 #----------------------------------
 
 # Setup stock data
