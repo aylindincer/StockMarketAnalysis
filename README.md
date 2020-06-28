@@ -47,4 +47,4 @@ The output directory will contain the following:
 **percent_change_presidents.html**
 : A plot of the percent change relative to the stock price from the inaugration date for each president.
 
-Both plots are interactive.  You are able to, zoom, select, hover over plot for specific values, or download plots as a png.
+Both plots are interactive.  You are able to zoom, select, hover over plot for specific values, or download plots as a png.
