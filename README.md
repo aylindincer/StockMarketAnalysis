@@ -5,9 +5,9 @@ The president_term_stock.py script will analyze the stock market within each of 
 
 Two plotly plots are generated: 
 1. Stock market index versus time OHLC plot
-![](https://github.com/aylindincer/Stock_Market_Analysis/blob/master/examples/OHLC_stock_presidents.png) 
+![]() 
 2. Stock market percent change since inauguration for each president.
-![](https://github.com/aylindincer/Stock_Market_Analysis/blob/master/examples/percent_change_presidents.png) 
+![]() 
 Note: These plots are saved locally as an .html file type and are interactive.
 
 The scripts perform the following steps:
